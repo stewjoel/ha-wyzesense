@@ -347,36 +347,31 @@ class Dongle(object):
         handler(pkt)
 
     def _Worker(self):
-        while True: #Watchdog
+        while not self.__exit_event.is_set():
             try:
                 s = b""
-                while True:
-                    if self.__exit_event.isSet():
-                        break
-                    
+                while not self.__exit_event.is_set():
                     s += self._ReadRawHID()
-                    #if s:
-                    #    log.info("Incoming buffer: %s", bytes_to_hex(s))
                     start = s.find(b"\x55\xAA")
                     if start == -1:
                         time.sleep(0.1)
                         continue
-
                     s = s[start:]
                     log.debug("Trying to parse: %s", bytes_to_hex(s))
                     pkt = Packet.Parse(s)
                     if not pkt:
                         s = s[2:]
                         continue
-
                     log.debug("Received: %s", bytes_to_hex(s[:pkt.Length]))
                     s = s[pkt.Length:]
                     self._HandlePacket(pkt)
             except OSError as e:
-                log.error(e)
+                log.error("OSError in worker thread: %s", str(e))
                 break
-            except:
-                log.exception("Ignoring non-OSError in worker thread. Please share the error logs with the developers.")
+            except Exception as e:
+                log.exception("Unexpected error in worker thread: %s", str(e))
+                # Consider adding a small delay here to prevent tight error loops
+                time.sleep(1)
 
     def _DoCommand(self, pkt, handler, timeout=_CMD_TIMEOUT):
         e = threading.Event()
