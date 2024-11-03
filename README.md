@@ -3,11 +3,11 @@ This is based on kevinvincent's (https://github.com/kevinvincent/ha-wyzesense) w
 <a href="https://www.buymeacoffee.com/stewjoel" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 
+See below for Original documentation:
 
 
 
-
-## No Longer Maintained
+## Original Kevinvincent integration is No Longer Maintained ##
 Hi all, I'm unable to maintain this component anymore due to time constraints. Unfortunately, there is a fatal issue with these sensors that has appeared over the year. They can die permanently if the battery gets too low, https://twitter.com/WyzeCam/status/1321147804610252800. Wyze is no longer selling wyze sense v1. If and when new sensors come out, I will try to create a component for those. Apologies to all who have bought these sensors, it seems like the sensors themselves are flawed, leading to a ton of issues after a year, and this component can't do much about it.
 
 I recommend upvoting this thread on the wyze forums so that wyze knows we want an official wyzesense integration: https://forums.wyzecam.com/t/home-assistant-integration/3971
