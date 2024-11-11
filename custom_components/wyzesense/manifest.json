@@ -1,6 +1,6 @@
 {
   "domain": "wyzesense",
-  "name": "Wyze Sense",
+  "name": "Wyze Sense 2",
   "documentation": "https://github.com/stewjoel/ha-wyzesense",
   "dependencies": [],
   "codeowners": ["@stewjoel"],
