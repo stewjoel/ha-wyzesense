@@ -1,9 +1,9 @@
 {
   "domain": "wyzesense",
   "name": "Wyze Sense",
-  "documentation": "https://github.com/kevinvincent/ha-wyzesense",
+  "documentation": "https://github.com/stewjoel/ha-wyzesense",
   "dependencies": [],
-  "codeowners": ["@kevinvincent"],
+  "codeowners": ["@stewjoel"],
   "requirements": [],
   "iot_class": "local_polling",
   "version": "0.0.14"
